@@ -1,0 +1,13 @@
+<div class="grid">
+    <div class="col-12 md:col-6 lg:col-4" *ngFor="let product of products">
+        <p-card [header]="product.name" [subheader]="product.category">
+            <img [src]="product.imageUrl" alt="{{ product.name }}" style="width: 100%; height: auto;">
+            <p>{{ product.description }}</p>
+            <p class="text-right">Price: ${{ product.price | number: '1.2-2' }}</p>
+
+            <ng-template pTemplate="footer">
+                <p-button label="Add to Cart" icon="pi pi-shopping-cart"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
